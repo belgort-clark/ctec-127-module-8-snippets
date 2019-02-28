@@ -18,7 +18,7 @@
             <select name="country" id="country">
                 <?php 
                     while($row = $result->fetch_assoc()){
-                        echo "<option value=\"" . $row['ContryCode'] ."\">" . $row['CountryCode'] . "</option>\n";
+                        echo "<option value=\"" . $row['CountryCode'] ."\">" . $row['CountryCode'] . "</option>\n";
                     }
                 ?>
             </select>
@@ -38,10 +38,12 @@
     // Code to display search results
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // build SQL
-        $sql = '';
+        $sql = "SELECT * FROM countrylanguage WHERE CountryCode=" . '"' . $_POST["country"] . '"';
         $result = $db->query($sql);
         while ($row = $result->fetch_assoc()) {
-            // code to display results here
+            echo "<div>";
+            echo $row["CountryCode"] . "---" . $row["Language"];
+            echo "</div>";
         }
     }
     ?>

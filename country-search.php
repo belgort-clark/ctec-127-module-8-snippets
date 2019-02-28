@@ -16,8 +16,8 @@ $result = $db->query($sql);
     <h1>Countries by Region</h1>
     <form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
         <div>
-            <label for="country">Select a Region
-                <select name="country" id="country">
+            <label for="region">Select a Region
+                <select name="region" id="region">
                     <?php
                     while ($row = $result->fetch_assoc()) {
                         echo "<option value=\"" . $row['Region'] . "\">" . $row['Region'] . "</option>\n";
@@ -28,6 +28,11 @@ $result = $db->query($sql);
             <div>
                 <label for="population">Population Size
                     <input type="number" name="population">
+                </label>
+            </div>
+            <div>
+                <label for="life">Life Expectancy
+                    <input type="number" name="life">
                 </label>
             </div>
             <div>
@@ -58,10 +63,29 @@ $result = $db->query($sql);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // build SQL
         // be sure to handle if no population is included
-        $sql = '';
+
+        if (!empty($_POST["population"])) {
+            $population = $_POST["population"];
+            $popSQL = " AND Population >= " . $population;
+        } else {
+            $popSQL = '';
+        }
+
+        if (!empty($_POST["life"])) {
+            $life = $_POST["life"];
+            $lifeSQL = " AND LifeExpectancy >= " . $life;
+        } else {
+            $lifeSQL = '';
+        }
+
+
+        $sql = 'SELECT * FROM country WHERE Region=' . '"' . $_POST['region'] . '"' . $popSQL . $lifeSQL;
+        echo $sql;
         $result = $db->query($sql);
         while ($row = $result->fetch_assoc()) {
-            // code to display results here
+            echo '<div>';
+            echo $row['Name'] . " - " . $row['Population'] . " Life = " . $row['LifeExpectancy'];
+            echo '</div>';
         }
     }
     ?>
