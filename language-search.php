@@ -26,7 +26,7 @@ if (isset($_POST['country'])) {
 
 <div class="container">
     <div class="col-12 mt-5">
-        <h1>Countries by Language</h1>
+        <h1 class="display-4 font-weight-bold">Countries by Language</h1>
         <p class="mb-5">CTEC 127 - Winter 2019</p>
         <form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST" class="mb-5">
             <div class="form-group mb-4">
