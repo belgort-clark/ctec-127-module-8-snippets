@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         echo "<h3 class='alert alert-success mb-4'>$result->num_rows results were found</h3>";
         ?>
-        <table class="table table-hover table-responsive">
+        <table class="table table-hover">
             <thead class="thead-dark"><tr><th>Name</th><th>Continent</th><th>Population</th><th>Life Expectancy</th><th>Government Form</th><th>Head of State</th></tr></thead>
             <?php 
             // Code to change showing T / F to Yes / No

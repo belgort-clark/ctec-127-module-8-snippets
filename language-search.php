@@ -57,7 +57,7 @@ if (isset($_POST['country'])) {
             if ($result->num_rows > 0) {
                 echo "<h3 class='mb-4'>Results for {$_POST["country"]}</h3>";
                 ?>
-                <table class="table table-hover table-responsive">
+                <table class="table table-hover">
                     <thead class="thead-dark"><tr><th>Language</th><th>Official Language</th><th>Percentage</th></tr></thead>
                     <?php 
                     // Code to change showing T / F to Yes / No
