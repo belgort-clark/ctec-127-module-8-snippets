@@ -1,4 +1,4 @@
-# ctec-127-module-8-snippets
+# CTEC 127 - Module 8 Code Examples
 
 This repo contains two form samples and a corresponding database .sql file.
 
@@ -8,7 +8,9 @@ The SQL file will create a new database named world along with three tables. The
 - country
 - countrylanguage
 
-Two PHP scripts containing starter code are also included.
+Two PHP scripts that contain complete working code.
 
 - country-search.php
 - language-search.php
+
+The examples use Bootstrap 4 and PHP Sticky Fields.
