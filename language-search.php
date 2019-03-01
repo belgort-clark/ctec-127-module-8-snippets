@@ -30,7 +30,7 @@ if (isset($_POST['country'])) {
         <p class="mb-5">CTEC 127 - Winter 2019</p>
         <form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST" class="mb-5">
             <div class="form-group mb-4">
-                <label for="country" class="form-label mb-3">Select a Country</label>
+                <label for="country" class="mb-3">Select a Country</label>
                     <select class="form-control w-25" name="country" id="country">
                         <?php
                         // Loop through each row in the result set
