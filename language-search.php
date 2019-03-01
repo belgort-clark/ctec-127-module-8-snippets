@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>World Search Demo </title>
 </head>
 <body>
@@ -24,7 +24,7 @@ if (isset($_POST['country'])) {
 
 ?>
 
-<div class="container">
+<div class="container bg-light p-3">
     <div class="col-12 mt-5">
         <h1 class="display-4 font-weight-bold">Countries by Language</h1>
         <p class="mb-5">CTEC 127 - Winter 2019</p>
@@ -50,7 +50,6 @@ if (isset($_POST['country'])) {
 
         <?php
         // Code to display search results
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $sql = "SELECT * FROM countrylanguage WHERE CountryCode=" . '"' . $_POST["country"] . '"';
             $result = $db->query($sql);
@@ -58,7 +57,7 @@ if (isset($_POST['country'])) {
             if ($result->num_rows > 0) {
                 echo "<h3 class='mb-4'>Results for {$_POST["country"]}</h3>";
                 ?>
-                <table class="table table-hover">
+                <table class="table table-hover table-responsive">
                     <thead class="thead-dark"><tr><th>Language</th><th>Official Language</th><th>Percentage</th></tr></thead>
                     <?php 
                     // Code to change showing T / F to Yes / No
@@ -84,5 +83,6 @@ if (isset($_POST['country'])) {
         ?>
     </div>
 </div>
+
 </body>
 </html>
