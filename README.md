@@ -14,3 +14,7 @@ Two PHP scripts that contain complete working code.
 - language-search.php
 
 The examples use Bootstrap 4 and PHP Sticky Fields.
+
+![Countries by Region](screenshots/countries_by_region.png)
+
+![Countries by Language](screenshots/countries_by_language.png)
